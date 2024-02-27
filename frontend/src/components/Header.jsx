@@ -10,7 +10,7 @@ const Header = () => {
                     <Navbar.Brand href='/'>TechShop</Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>
-                        <Nav className='ms-auto d-flex align-items-center'>
+                        <Nav className='ms-auto'>
                             <Nav.Link href='/cart'>
                                 <FaShoppingCart />
                                 Cart
