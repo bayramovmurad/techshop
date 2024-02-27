@@ -1,5 +1,5 @@
 import { Row, Col } from 'react-bootstrap';
-import Product from '../components/Product';
+import Product from '../components/Product/Product';
 import products from '../products';
 
 const HomeScreen = () => {
