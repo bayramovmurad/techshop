@@ -2,6 +2,8 @@ import { Container } from "react-bootstrap"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import HomeScreen from "./screens/HomeScreen"
+import { Route, Routes } from "react-router-dom"
+
 
 const App = () => {
   return (
@@ -9,7 +11,9 @@ const App = () => {
       <Header />
       <main className="py-3">
         <Container>
-         <HomeScreen/>
+        <Routes>
+              <Route index={true} path='/' element={<HomeScreen />} />
+        </Routes>
         </Container>
       </main>
       <Footer/>
