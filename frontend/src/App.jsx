@@ -5,11 +5,15 @@ import HomeScreen from "./screens/HomeScreen"
 import { Route, Routes } from "react-router-dom"
 import ProductScreen from "./screens/ProductScreen"
 import BasketCartScreen from "./screens/BasketCartScreen"
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import LoginScreen from "./screens/LoginScreen"
+import RegisterScreen from "./screens/RegisterScreen"
 
 const App = () => {
   return (
     <>
+      <ToastContainer />
       <Header />
       <main className="py-3">
         <Container>
@@ -17,6 +21,8 @@ const App = () => {
               <Route path='/' element={<HomeScreen />} />
             <Route path='/product-details/:id' element={<ProductScreen />} />
             <Route path='/cart' element={<BasketCartScreen />} />
+            <Route path='/login' element={<LoginScreen />} />
+            <Route path='/register' element={<RegisterScreen />} />
         </Routes>
         </Container>
       </main>
