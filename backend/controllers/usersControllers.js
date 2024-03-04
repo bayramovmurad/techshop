@@ -1,14 +1,15 @@
 import asyncHandler from '../middleware/asyncHandler.js';
 import User from '../models/userModel.js';
 import generateToken from '../utils/generateToken.js';
+import bcrypt from 'bcryptjs';
 
 const authUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
 
-    if (user && (await user.matchPassword(password))) {
-      generateToken(res,user._id)
+    if (user && (await bcrypt.compare(password, user.password))) {
+        generateToken(res, user._id);
         res.json({
             _id: user._id,
             name: user.name,
@@ -20,7 +21,6 @@ const authUser = asyncHandler(async (req, res) => {
         throw new Error('Invalid email or password');
     }
 });
-
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, password } = req.body;
 
