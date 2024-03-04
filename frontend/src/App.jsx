@@ -11,6 +11,8 @@ import LoginScreen from "./screens/LoginScreen"
 import RegisterScreen from "./screens/RegisterScreen"
 import PrivateRoute from "./components/PrivateRoutes"
 import ShippingScreen from "./screens/ShippingScreen"
+import AdminRoute from "./components/AdminRoute"
+import ProductListScreen from "./screens/admin/ProductListScreen"
 
 const App = () => {
   return (
@@ -28,6 +30,9 @@ const App = () => {
 
             <Route path='' element={<PrivateRoute />}>
               <Route path='/shipping' element={<ShippingScreen/>} />
+            </Route>
+            <Route path='' element={<AdminRoute />}>
+              <Route path='/admin/productlist' element={<ProductListScreen />} />
             </Route>
           </Routes>
         </Container>
