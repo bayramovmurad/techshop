@@ -5,7 +5,6 @@ import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
-import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 const port = process.env.PORT || 5678;
@@ -15,7 +14,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors());
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.get('/', (req, res) => {
